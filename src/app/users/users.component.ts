@@ -1,3 +1,4 @@
+import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+  users: any;
 
-  constructor() { }
+  constructor(private dateService: DataService) { }
 
   ngOnInit() {
+    this.dateService.getusers().subscribe(
+      res => this.users = res,
+      err => console.log(err),
+      () => console.log(this.users)
+    );
   }
+
 
 }
