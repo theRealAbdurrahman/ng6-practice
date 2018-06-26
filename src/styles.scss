@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+  background-color: #f2f2f2;
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 70px auto;
+  height: 100%;
+  #content {
+    // padding: 30px 50px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none !important;
+      li {
+        color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 8px; // display: inherit;
+        a {
+          font-size: 1em;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
