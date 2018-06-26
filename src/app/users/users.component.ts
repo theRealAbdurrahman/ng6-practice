@@ -1,5 +1,6 @@
 import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -9,14 +10,17 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent implements OnInit {
   users: any;
 
-  constructor(private dateService: DataService) { }
+  constructor(private dateService: DataService, private router: Router) { }
 
   ngOnInit() {
-    this.dateService.getusers().subscribe(
+    this.dateService.getUsers().subscribe(
       res => this.users = res,
       err => console.log(err),
       () => console.log(this.users)
     );
+  }
+  goToDetails(user) {
+    this.router.navigate(['/details', user.id], user)
   }
 
 

@@ -9,7 +9,11 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getusers() {
+  getUsers() {
     return this.http.get(`${this.baseurl}/users`)
+  }
+  getUserDetail(id) {
+    return this.http.get(`${this.baseurl}/users/${id}`)
+
   }
 }
