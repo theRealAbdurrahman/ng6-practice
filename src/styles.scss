@@ -12,16 +12,16 @@ body {
   grid-template-columns: 70px auto;
   height: 100%;
   #content {
-    // padding: 30px 50px;
+    padding: 30px 50px;
     ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none !important;
+      // margin: 0px;
+      // padding: 0px; 
+      // list-style-type: none !important;
       li {
         color: #fff;
         border-radius: 8px;
         padding: 20px;
-        margin-bottom: 8px; // display: inherit;
+        margin-bottom: 8px;
         a {
           font-size: 1em;
           font-weight: 300;

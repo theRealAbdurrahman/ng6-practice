@@ -2,9 +2,12 @@ nav {
   background-color: #2D2E2E;
   height: 100%;
   ul {
-    padding: 0;
+    padding: 10px;
     margin: 0;
+    list-style-type: none !important;
     li {
+      padding: 0.8em;
+      display: inherit;
       a {
         color: #fff;
         display: block;
