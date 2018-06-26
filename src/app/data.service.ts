@@ -16,4 +16,8 @@ export class DataService {
     return this.http.get(`${this.baseurl}/users/${id}`)
 
   }
+  getPosts() {
+    return this.http.get(`${this.baseurl}/posts`)
+  }
+
 }
