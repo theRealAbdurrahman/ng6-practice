@@ -16,9 +16,7 @@ export class PostsComponent implements OnInit, OnDestroy {
     this.getPosts()
   }
   getPosts() {
-    this.subscription = this.data.getPosts().subscribe(
-      data => this.posts = data
-    )
+    this.subscription = this.data.getPosts().subscribe(data => this.posts = data)
   }
   postDetails(post) {
     console.log(post.userId)
@@ -28,8 +26,7 @@ export class PostsComponent implements OnInit, OnDestroy {
   //   this.data.getUserDetail(this.postDetails())
   // }
   ngOnDestroy() {
-    this.subscription.unsubscribe()
-
+    this.subscription.unsubscribe();
   }
 
 }
