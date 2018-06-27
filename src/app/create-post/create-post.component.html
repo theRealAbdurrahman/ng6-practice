@@ -1,39 +1,47 @@
 <div class="container">
   <h2>Create Post</h2>
   <!-- turn off browser validation -->
-  <form id=formId (ngSubmit)="submitMethod()" #form="ngForm" novalidate>
-    <div class="form-group">
+  <form id=formId class="needs-validation" (ngSubmit)="submitMethod()" #form="ngForm" novalidate>
+    <div class="form-group" [class.has-error]="postTitle.touched && postTitle.invalid">
       <label for="post-title">Title:</label>
-      <input type="text" class="form-control" name="post-title" [ngModel]="post.title" (ngModelChange)="titleToUpperCase($event)" />
+      <input type="text " class="form-control" required #postTitle="ngModel" name="post-title" [ngModel]="post.title" (ngModelChange)="titleToUpperCase($event) "
+      />
+      <!-- <div *ngIf="postTitle.touched && postTitle.invalid" class="invalid-feedback">
+        Looks good!
+      </div> -->
+      <div class="alert alert-danger" *ngIf="postTitle.touched && postTitle.invalid ">Title is required </div>
       <br>
-      <label for="post-body">Body:</label>
-      <textarea type="text" class="form-control" required name="post-body" [(ngModel)]="post.body"></textarea>
+      <label for="post-body ">Body:</label>
+      <textarea type="text " class="form-control" required min-length="10" name="post-body " [(ngModel)]="post.body"></textarea>
       <br>
     </div>
-    <div class="checkbox">
-      <label for="">Private?
-        <input type="checkbox" name="private-post" id="" [ngModel]="post.private" (ngModelChange)="test($event)" value="true">
+    <div class="checkbox ">
+      <label for=" ">Private?
+        <input type="checkbox" name="private-post " id=" " [ngModel]="post.private" (ngModelChange)="test($event)
+      " value="true " #private="ngModel">
       </label>
     </div>
-    <label for=""> now or later</label>
+    <label for=" "> now or later</label>
     <div class="radio">
-      <label for="">later
-        <input type="radio" name="later-post" id="" [(ngModel)]="post.later" value="later">
+      <label for=" ">later
+        <input type="radio" name="later-post " id=" " [(ngModel)]="post.later" value="later">
       </label>
     </div>
     <div class="radio">
-      <label for="">now
-        <input type="radio" name="later-post" id="" [(ngModel)]="post.later" value="now">
+      <label for=" ">now
+        <input type="radio" name="later-post " id=" " [(ngModel)]="post.now" value="now">
       </label>
     </div>
     <div class="form-group">
-      <label for="">Language</label>
-      <select name="" id="" class="form-control" name="language" [(ngModel)]="post.language">
-        <option *ngFor="let option of options" [value]="option">{{option}}</option>
+      <label for=" ">Language</label>
+      <select name=" " id=" " class="form-control " name="language" [(ngModel)]="post.language">
+        <option *ngFor="let option of options " [value]="option ">{{option}}</option>
       </select>
     </div>
-    <button class="btn btn-primary" type="submit" (keyup.enter)="submitMethod()">submit</button>
+    <button class="btn btn-primary" type="submit" (keyup.enter)="submitMethod() ">submit</button>
   </form>
 </div>
 
-pristine {{form.pristine}} dirty {{form.dirty}}
+<div>
+  pristine &nbsp; {{form.pristine}} &nbsp;&nbsp; dirty &nbsp;{{form.dirty}} &nbsp; private&nbsp;{{private.value}}
+</div>
