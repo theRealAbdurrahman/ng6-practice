@@ -1,13 +1,14 @@
 <h2>Create Post</h2>
 
-<form id=formId (ngSubmit)="submitMethod()" #form="ngForm">
+<form id=formId (ngSubmit)="submitMethod()" #form="ngForm" novalidate>
+  <!-- turn off browser validation -->
 
   <!-- <input type="text " required [(ngModel)]="post.title "></input> -->
   <input type="text" name="post-title" [(ngModel)]="post.title" />
   <br>
   <textarea type="text" required name="post-body" [(ngModel)]="post.body"></textarea>
   <br>
-  <button type="submit" (keyup.enter)="submitMethod()">submit</button>
+  <button class="btn btn-large" type="submit" (keyup.enter)="submitMethod()">submit</button>
 </form>
 
 pristine {{form.pristine}} dirty {{form.dirty}}
