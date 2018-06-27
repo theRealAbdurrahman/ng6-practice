@@ -9,7 +9,11 @@ export class CreatePostComponent implements OnInit {
   post: Object = {
     title: '',
     body: '',
+    private: false,
+    later: false,
+    language: "",
   }
+  options: String[] = ["arabic", "english", "german"]
 
   constructor() { }
 
@@ -18,6 +22,18 @@ export class CreatePostComponent implements OnInit {
   submitMethod() {
     console.log(this.post);
 
+  }
+  test($event) {
+    console.log("hi", $event);
+    this.post.private = $event;
+
+  }
+  titleToUpperCase(value) { // capitalize first letter when user writes in the field
+    if (value.length > 0) {
+      this.post.title = value.charAt(0).toUpperCase() + value.slice(1)
+    } else {
+      this.post.title = value
+    }
   }
 
 }

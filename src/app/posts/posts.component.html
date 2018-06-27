@@ -1,5 +1,5 @@
 <h1>Posts</h1>
-<button (click)="createPost()">text</button>
+<button class="btn btn-block btn-primary" (click)="createPost()">Create post</button>
 <ul>
   <li class="post" *ngFor="let post of posts" (click)="postDetails(post)">
     <h2 class="post-title">{{post.title}}</h2>
