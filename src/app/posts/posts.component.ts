@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { DataService } from './../data.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
@@ -10,7 +11,7 @@ export class PostsComponent implements OnInit, OnDestroy {
   posts: any;
   user: any;
   subscription: any;
-  constructor(private data: DataService) { }
+  constructor(private data: DataService, private router: Router) { }
 
   ngOnInit() {
     this.getPosts()
@@ -27,6 +28,9 @@ export class PostsComponent implements OnInit, OnDestroy {
   // }
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+  createPost() {
+    this.router.navigate(["/create-post"])
   }
 
 }

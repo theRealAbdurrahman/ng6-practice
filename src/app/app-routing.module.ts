@@ -1,3 +1,4 @@
+import { CreatePostComponent } from './create-post/create-post.component';
 import { DetailsComponent } from './details/details.component';
 import { UsersComponent } from './users/users.component';
 import { PostsComponent } from './posts/posts.component';
@@ -8,6 +9,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'details/:id', component: DetailsComponent },
   { path: 'posts', component: PostsComponent },
+  { path: 'create-post', component: CreatePostComponent },
   { path: '', redirectTo: '/users', pathMatch: 'full' },
 ];
 
